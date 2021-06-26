@@ -20,8 +20,6 @@ export default class GameView{
             
             let winx = document.querySelector(".win-x");
             let wino = document.querySelector(".win-o");
-            winx.classList.remove("winners");
-            wino.classList.remove("winners");
 
             tile.innerHTML = `<span class="${tileType}">${game.board[i] ? game.board[i] : ""}</span>`; //it shows empty/" " instead of "null" in the grid.
             //tile is winning or matched combo and tile type is the either tile-o or tile-x
@@ -29,6 +27,8 @@ export default class GameView{
                 tile.classList.add("tile-winner"); //if wincombo exists, it'll add the class title-winner
                 // console.log(tileType);
                 
+            winx.classList.remove("winners");
+            wino.classList.remove("winners");
                 if(tileType=="tile-x"){
                     console.log("X wins");
                     winx.classList.add("winners");
